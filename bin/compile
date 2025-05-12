@@ -59,10 +59,7 @@ esac
 
 # Install correct dependencies according to $STACK
 case "${STACK}" in
-  "heroku-24")
-    error "This buildpack has reached end of life. Please use https://github.com/heroku/heroku-buildpack-chrome-for-testing"
-    ;;
-  "heroku-18" | "heroku-20" | "heroku-22")
+  "heroku-18" | "heroku-20" | "heroku-22" | "heroku-24")
     topic "###### WARNING ######"
     topic "This buildpack is deprecated. Please use https://github.com/heroku/heroku-buildpack-chrome-for-testing"
     topic "#####################"
@@ -98,7 +95,7 @@ case "${STACK}" in
     "
     ;;
   *)
-    error "STACK must be 'heroku-18', 'heroku-20' or 'heroku-22', not '${STACK}'."
+    error "STACK must be 'heroku-18', 'heroku-20', 'heroku-22' or 'heroku-24', not '${STACK}'."
 esac
 
 if [ ! -f $CACHE_DIR/PURGED_CACHE_V1 ]; then
